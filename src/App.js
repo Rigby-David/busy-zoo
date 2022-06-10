@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import ToolsList from './ToolsList';
 
 function App() {
 
@@ -8,13 +9,27 @@ function App() {
 
   const [plantSize, setPlantSize] = useState(10);
   const [weedSize, setWeedSize] = useState(10);
+  const [tools, setTools] = useState (['hammer', 'axe', 'tractor', 'pickaxe']);
 
-  // function handleCat() {
-  //   animals.push('cat');
+  function handleHammer() {
+    tools.push('hammer');
 
-  //   setAnimals(animals.slice());
-  // }
+    setTools(tools.slice());
+  }
 
+  function handleAxe() {
+    tools.push('axe');
+
+    setTools(tools.slice());
+  }
+
+  function handleTractor() {
+
+  }
+
+  function handlePickaxe() {
+
+  }
   return (
     <div className="App">
       <div className='plants'>
@@ -32,6 +47,11 @@ function App() {
             <button onClick={() => setWeedSize(weedSize - 1)}>Whack those weeds!</button>
           </div>
         </div>
+      </div>
+      <ToolsList tools={tools} />
+      <div className='buttons'>
+        <button onClick = {handleHammer}>Add a hammer!</button>
+        <button onClick = {handleAxe}>Add an axe!</button>
       </div>
     </div>
   );
