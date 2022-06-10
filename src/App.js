@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import ToolsList from './ToolsList';
+import Shed from './Shed';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   const [plantSize, setPlantSize] = useState(10);
   const [weedSize, setWeedSize] = useState(10);
   const [tools, setTools] = useState (['hammer', 'axe', 'tractor', 'pickaxe']);
+  const [shedIsOpen, setShedIsOpen] = useState(true);
 
   function handleHammer() {
     tools.push('hammer');
@@ -24,11 +26,21 @@ function App() {
   }
 
   function handleTractor() {
+    tools.push('tractor');
 
+    setTools(tools.slice());
   }
 
   function handlePickaxe() {
+    tools.push('pickaxe');
 
+    setTools(tools.slice());
+  }
+
+  function handleShed() {
+    tools.pop();
+
+    setTools(tools.slice());
   }
   return (
     <div className="App">
@@ -40,7 +52,7 @@ function App() {
             <button onClick={() => setPlantSize(plantSize - 1)}>Oh no! The tree is too big! Shrink it!</button>
           </div>
         </div>
-        <div className='plant'>
+        <div className='weeds'>
           <img src="weeds.jpg" width={10 * weedSize} />
           <div className='buttons'>
             <button onClick={() => setWeedSize(weedSize + 1)}>Oh no! The weeds are growing!</button> 
@@ -48,10 +60,19 @@ function App() {
           </div>
         </div>
       </div>
-      <ToolsList tools={tools} />
-      <div className='buttons'>
-        <button onClick = {handleHammer}>Add a hammer!</button>
-        <button onClick = {handleAxe}>Add an axe!</button>
+      <div className='shed'>
+        <Shed shedIsOpen={shedIsOpen} />
+        <button onClick = {() => setShedIsOpen(!shedIsOpen)}>Check out the shed</button>
+      </div>
+      <div className='toolpics'>
+        <ToolsList tools={tools} />
+        <div className='buttons'>
+          <button onClick = {handleHammer}>Add a hammer!</button>
+          <button onClick = {handleAxe}>Add an axe!</button>
+          <button onClick = {handleTractor}>Add a tractor</button>
+          <button onClick = {handlePickaxe}>Add a pickaxe</button>
+          <button onClick = {handleShed}>Put a tool back</button>
+        </div>
       </div>
     </div>
   );

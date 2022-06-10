@@ -26,10 +26,10 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### Busy Farm Plan
 -- State --
-[plantSize, setPlantSize] = useState(10)
-[weedSize, setWeedSize] = useState(10)
-[shedIsOpen, setShedIsOpen] = useState(true)
-[tools, setTools] = useState (['hammer', 'axe', 'tractor', 'pickaxe' ])
+x  [plantSize, setPlantSize] = useState(10)
+x  [weedSize, setWeedSize] = useState(10)
+  [shedIsOpen, setShedIsOpen] = useState(true)
+x  [tools, setTools] = useState (['hammer', 'axe', 'tractor', 'pickaxe' ])
     🔨  🪓 🚜 ⛏️
 -- Components --
 plantState -- onClick = {() => setPlantSize{plantSize + 1}}
@@ -44,3 +44,6 @@ toolsState -- onClick = {handleHammer}
     setTools(tools.slice())
 }
 -- repeat for each tool in array
+
+import backgroundImg from './halloween.png';
+<div className="App" style={{ backgroundImage: `url(${backgroundImg})` }}>
