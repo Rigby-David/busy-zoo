@@ -6,3 +6,4 @@ export default function Tool({ tool }) {
     {tool === 'pickaxe' && '⛏️'}
   </div>;
 }
+// small change
