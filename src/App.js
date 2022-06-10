@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  // const [animals, setAnimals] = useState (10);
+  const [catSize, setCatSize] = useState(10)
+;  // function handleCat() {
+  //   animals.push('cat');
+
+  //   setAnimals(animals.slice());
+  // }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='animals'>
+        <p style={{ fontSize: `${catSize}px` }}>🐱 : {catSize}</p>
+        <button onClick={() => setCatSize(catSize + 10)}>Grow cat</button>
+        <button onClick={() => setCatSize(catSize - 10)}>Shrink cat</button>
+      </div>
     </div>
   );
 }
