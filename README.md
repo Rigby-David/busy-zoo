@@ -23,27 +23,3 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### Busy Farm Plan
--- State --
-x  [plantSize, setPlantSize] = useState(10)
-x  [weedSize, setWeedSize] = useState(10)
-  [shedIsOpen, setShedIsOpen] = useState(true)
-x  [tools, setTools] = useState (['hammer', 'axe', 'tractor', 'pickaxe' ])
-    🔨  🪓 🚜 ⛏️
--- Components --
-plantState -- onClick = {() => setPlantSize{plantSize + 1}}
-weedState -- onClick = {() => setWeedSize{WeedSize + 1}}
-
-shedState -- onClick = {() => setShedIsOpen(!shedIsOpen)}
-
-toolsState -- onClick = {handleHammer}
--- function handleHammer() {
-    tools.push('hammer')
-
-    setTools(tools.slice())
-}
--- repeat for each tool in array
-
-import backgroundImg from './halloween.png';
-<div className="App" style={{ backgroundImage: `url(${backgroundImg})` }}>
