@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import ToolsList from './ToolsList';
 import Shed from './Shed';
+import CustomButton from './CustomButton';
 
 function App() {
 
@@ -48,30 +49,30 @@ function App() {
         <div className='plant'>
           <img src="smalltree.png" width={10 * plantSize} alt='shed'/>
           <div className='buttons'>
-            <button onClick={() => setPlantSize(plantSize + 1)}>Water the tree to make it grow!</button>
-            <button onClick={() => setPlantSize(plantSize - 1)}>Oh no! The tree is too big! Shrink it!</button>
+            <CustomButton onClick={() => setPlantSize(plantSize + 1)}>Water the tree to make it grow!</CustomButton>
+            <CustomButton onClick={() => setPlantSize(plantSize - 1)}>Oh no! The tree is too big! Shrink it!</CustomButton>
           </div>
         </div>
         <div className='weeds'>
           <img src="weeds.jpg" width={10 * weedSize} />
           <div className='buttons'>
-            <button onClick={() => setWeedSize(weedSize + 1)}>Oh no! The weeds are growing!</button> 
-            <button onClick={() => setWeedSize(weedSize - 1)}>Whack those weeds!</button>
+            <CustomButton onClick={() => setWeedSize(weedSize + 1)}>Oh no! The weeds are growing!</CustomButton> 
+            <CustomButton onClick={() => setWeedSize(weedSize - 1)}>Whack those weeds!</CustomButton>
           </div>
         </div>
       </div>
       <div className='shed'>
         <Shed shedIsOpen={shedIsOpen} />
-        <button onClick = {() => setShedIsOpen(!shedIsOpen)}>Check out the shed</button>
+        <CustomButton onClick = {() => setShedIsOpen(!shedIsOpen)}>Check out the shed</CustomButton>
       </div>
       <div className='toolpics'>
         <ToolsList tools={tools} />
         <div className='buttons'>
-          <button onClick = {handleHammer}>Add a hammer!</button>
-          <button onClick = {handleAxe}>Add an axe!</button>
-          <button onClick = {handleTractor}>Add a tractor</button>
-          <button onClick = {handlePickaxe}>Add a pickaxe</button>
-          <button onClick = {handleShed}>Put a tool back</button>
+          <CustomButton onClick = {handleHammer}>Add a hammer!</CustomButton>
+          <CustomButton onClick = {handleAxe}>Add an axe!</CustomButton>
+          <CustomButton onClick = {handleTractor}>Add a tractor</CustomButton>
+          <CustomButton onClick = {handlePickaxe}>Add a pickaxe</CustomButton>
+          <CustomButton onClick = {handleShed}>Put a tool back</CustomButton>
         </div>
       </div>
     </div>
