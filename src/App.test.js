@@ -32,4 +32,20 @@ test('if the user clicks the axe button, add another axe to the screen', () => {
   expect(axeAfterClick.length).toBe(2);
 });
 
-// comment
+
+test('user should be able to add a tractor to the screen on click', () => {
+  render(<App />);
+  const tractorOnLoad = screen.getAllByText(/🚜/i);
+
+  expect(tractorOnLoad.length).toBe(1);
+
+  const tractorButton = screen.getByText(/Add a tractor/i);
+
+  fireEvent.click(tractorButton);
+
+  const tractorOnClick = screen.getAllByText(/🚜/i);
+
+  expect(tractorOnClick.length).toBe(2);
+});
+
+// test('user should ')

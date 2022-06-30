@@ -46,7 +46,7 @@ function App() {
     <div className="App">
       <div className='plants'>
         <div className='plant'>
-          <img src="smalltree.png" width={10 * plantSize} />
+          <img src="smalltree.png" width={10 * plantSize} alt='shed'/>
           <div className='buttons'>
             <button onClick={() => setPlantSize(plantSize + 1)}>Water the tree to make it grow!</button>
             <button onClick={() => setPlantSize(plantSize - 1)}>Oh no! The tree is too big! Shrink it!</button>
