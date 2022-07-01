@@ -2,14 +2,15 @@ import Button from '@mui/material/Button';
 import React from 'react';
 
 export default function CustomButton({
-  onClick, children, coolColor = 'red', border = 'black solid 2px', margin = '5px'
+  onClick, children, color = 'red', border = 'black solid 2px', margin = '5px',
 }) {
   return (
-    <Button onClick={onClick}
+    <Button variant='contained' onClick={onClick}
       sx={{
-        background: coolColor,
+        background: color,
         border: border,
         margin: margin,
+        
       }}>
       {children}
     </Button>
